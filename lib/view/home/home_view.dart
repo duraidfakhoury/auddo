@@ -5,6 +5,7 @@ import 'package:auddo/common_widget/recomended_cell.dart';
 import 'package:auddo/common_widget/title_section.dart';
 import 'package:auddo/common_widget/view_all_section.dart';
 import 'package:auddo/view_model/home_view_model.dart';
+import 'package:auddo/view_model/splash_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,6 @@ class _HomeViewState extends State<HomeView> {
   final homeVM = Get.put(HomeViewModel());
 
   void onPressed(){
-    print("hi");
   }
 
   @override
@@ -72,7 +72,9 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: TColor.bg,
         elevation: 0,
         leading: IconButton(
-          onPressed: () {}, 
+          onPressed: () {
+            Get.find<SplashViewModel>().openDrawer();
+          }, 
           icon: Image.asset(
             "assets/img/menu.png",
             width: 25 ,
@@ -120,7 +122,7 @@ class _HomeViewState extends State<HomeView> {
             ),
             ViewAllSection(title: "Recently Played", onPressed: onPressed),
             SizedBox(
-              height: MediaQuery.sizeOf(context).height*0.3,
+              height:252,
               child: ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
@@ -128,7 +130,6 @@ class _HomeViewState extends State<HomeView> {
                 itemCount: homeVM.recentlyPlayedArr.length,
                 itemBuilder: (context, index) {
                   var sObj = homeVM.recentlyPlayedArr[index];
-                  print(sObj['name']);
                   return SongRow(
                     sObj: sObj,
                     onPressed: () {},
