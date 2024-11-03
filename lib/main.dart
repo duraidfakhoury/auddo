@@ -1,9 +1,17 @@
 import 'package:auddo/common/color_extension.dart';
 import 'package:auddo/view/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  SystemChrome.setSystemUIOverlayStyle( const SystemUiOverlayStyle(
+  statusBarColor: Colors.transparent, // or any color you want
+  statusBarIconBrightness: Brightness.light, // for dark background
+  statusBarBrightness: Brightness.dark, // for iOS
+));
   runApp(const MyApp());
 }
 

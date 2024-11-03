@@ -1,4 +1,5 @@
 import 'package:auddo/common/color_extension.dart';
+import 'package:auddo/view/home/home_view.dart';
 import 'package:flutter/material.dart';
 
 class MainTabView extends StatefulWidget {
@@ -40,7 +41,7 @@ with SingleTickerProviderStateMixin {
       body: TabBarView(
         controller: controller,
         children:[
-          Center(child: Container(child: Text("Home"),)),
+          const HomeView(),
           Center(child: Container(child: Text("songs"),)),
           Center(child: Container(child: Text("settings"),)),
         ]),

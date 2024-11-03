@@ -15,7 +15,6 @@ class _SplashViewState extends State<SplashView> {
   final splashVM = Get.put(SplashViewModel());
   @override
   void initState(){
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
     super.initState();
     splashVM.loadView();
   }
