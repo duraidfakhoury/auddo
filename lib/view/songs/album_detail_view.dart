@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:auddo/common/color_extension.dart';
 import 'package:auddo/common_widget/album_song_row.dart';
 import 'package:auddo/view_model/album_view_model.dart';
-import 'package:auddo/view_model/splash_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
