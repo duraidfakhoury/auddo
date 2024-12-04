@@ -1,5 +1,8 @@
 import 'package:auddo/common/color_extension.dart';
+import 'package:auddo/common_widget/icon_text_row.dart';
 import 'package:auddo/view/home/home_view.dart';
+import 'package:auddo/view/settings/settings_view.dart';
+import 'package:auddo/view/songs/songs_view.dart';
 import 'package:auddo/view_model/splash_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -109,156 +112,58 @@ with SingleTickerProviderStateMixin {
                 
               ),
             ),
-          
-            ListTile(
-              leading: Image.asset(
-                'assets/img/m_theme.png',
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                'Themes' , 
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14
-                ),
-              ),
-              onTap: () {
-                splashVM.closeDrawer();
-              },
-            ),
-            Divider(color: TColor.primaryText.withOpacity(0.07),indent: 70),
-              ListTile(
-              leading: Image.asset(
-                'assets/img/m_ring_cut.png',
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                'Ringtone Cutter' , 
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14
-                ),
-              ),
-              onTap: () {
-                splashVM.closeDrawer();
-              },
-            ),
-            Divider(color: TColor.primaryText.withOpacity(0.07),indent: 70),
-                        ListTile(
-              leading: Image.asset(
-                'assets/img/m_sleep_timer.png',
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                'Sleep Timer' , 
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14
-                ),
-              ),
-              onTap: () {
-                splashVM.closeDrawer();
-              },
-            ),
-            Divider(color: TColor.primaryText.withOpacity(0.07),indent: 70),
-                        ListTile(
-              leading: Image.asset(
-                'assets/img/m_eq.png',
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                'Equliser' , 
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14
-                ),
-              ),
-              onTap: () {
-                splashVM.closeDrawer();
-              },
-            ),
-            Divider(color: TColor.primaryText.withOpacity(0.07),indent: 70),
-                        ListTile(
-              leading: Image.asset(
-                'assets/img/m_driver_mode.png',
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                'Driver Mode' , 
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14
-                ),
-              ),
-              onTap: () {
-                splashVM.closeDrawer();
-              },
-            ),
-            Divider(color: TColor.primaryText.withOpacity(0.07),indent: 70),
-                        ListTile(
-              leading: Image.asset(
-                'assets/img/m_hidden_folder.png',
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                'Hidden Folder' , 
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14
-                ),
-              ),
-              onTap: () {
-                splashVM.closeDrawer();
-              },
-            ),
-            Divider(color: TColor.primaryText.withOpacity(0.07),indent: 70),
-                        ListTile(
-              leading: Image.asset(
-                'assets/img/m_scan_media.png',
-                width: 25,
-                height: 25,
-                fit: BoxFit.contain,
-              ),
-              title: Text(
-                'Scan Media' , 
-                style: TextStyle(
-                  color: TColor.primaryText.withOpacity(0.9),
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14
-                ),
-              ),
-              onTap: () {
-                splashVM.closeDrawer();
-              },
-            ),
-            Divider(color: TColor.primaryText.withOpacity(0.07),indent: 70),
+
+            IconTextRow(
+            title: "Themes", 
+            icon: "assets/img/m_theme.png",
+            onTap: () {
+              splashVM.closeDrawer();
+            },),
+            IconTextRow(
+            title: "Ringtone Cutter", 
+            icon: "assets/img/m_ring_cut.png",
+            onTap: () {
+              splashVM.closeDrawer();
+            },),
+            IconTextRow(
+            title: "Sleep Timer", 
+            icon: "assets/img/m_sleep_timer.png",
+            onTap: () {
+              splashVM.closeDrawer();
+            },),
+            IconTextRow(
+            title: "Equliser", 
+            icon: "assets/img/m_eq.png",
+            onTap: () {
+              splashVM.closeDrawer();
+            },),
+            IconTextRow(
+            title: "Driver Mode", 
+            icon: "assets/img/m_driver_mode.png",
+            onTap: () {
+              splashVM.closeDrawer();
+            },),
+            IconTextRow(
+            title: "Hidden Folder", 
+            icon: "assets/img/m_hidden_folder.png",
+            onTap: () {
+              splashVM.closeDrawer();
+            },),
+            IconTextRow(
+            title: "Scan Media", 
+            icon: "assets/img/m_scan_media.png",
+            onTap: () {
+              splashVM.closeDrawer();
+            },),
           ],
         ),
       ),
       body: TabBarView(
         controller: controller,
-        children:[
-          const HomeView(),
-          Center(child: Container(child: Text("songs"),)),
-          Center(child: Container(child: Text("settings"),)),
+        children:const [
+          HomeView(),
+          SongsView(),
+          SettingsView()
         ]),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
