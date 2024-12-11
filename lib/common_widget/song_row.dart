@@ -1,4 +1,5 @@
 import 'package:auddo/common/color_extension.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -71,7 +72,9 @@ class SongRow extends StatelessWidget {
                         color: TColor.org,
                       ),
                       onRatingUpdate: (rating) {
-                        print(rating);
+                        if (kDebugMode) {
+                          print(rating);
+                        }
                       },
                     ),
                   ),

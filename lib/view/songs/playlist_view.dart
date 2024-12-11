@@ -4,7 +4,6 @@ import 'package:auddo/common_widget/playlist_song_cell.dart';
 import 'package:auddo/common_widget/view_all_section.dart';
 import 'package:auddo/view_model/playlists_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 
 class PlaylistView extends StatefulWidget {
